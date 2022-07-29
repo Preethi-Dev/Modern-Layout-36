@@ -1,5 +1,133 @@
 /* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+}
+
 /* Fonts */
+@font-face {
+  font-family: "Kirvy Light";
+  src: url(./assets/fonts/Kirvy-Light.otf);
+}
+
+@font-face {
+  font-family: "Kirvy Thin";
+  src: url(./assets/fonts/Kirvy-Thin.otf);
+}
+
+@font-face {
+  font-family: "Kirvy";
+  src: url(./assets/fonts/Kirvy-Regular.otf);
+}
+
+@font-face {
+  font-family: "Kirvy Bold";
+  src: url(./assets/fonts/Kirvy-Bold.otf);
+}
+
 /* Variables */
+:root {
+  --primary: #141c24;
+}
+
 /* Base Styles */
+body {
+  color: var(--primary);
+  background-image: url(./assets/images/Bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header,
+main > * {
+  font-family: "Kirvy light";
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  text-align: justify;
+  letter-spacing: -0.04em;
+}
+
+header .logo h1 {
+  font-size: 1.125rem;
+}
+
+header ul {
+  display: flex;
+  gap: 1rem;
+}
+
+header ul li {
+  font-size: 0.875rem;
+}
+
 /* Mobile Styles */
+header,
+main {
+  padding: 1.5rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: [col-start] repeat(6, 1fr) [col-end];
+  grid-row-gap: 2.375rem;
+}
+
+main > * {
+  grid-column: col-start / col-end;
+}
+
+main p {
+  font-size: 2rem;
+}
+
+main p > span {
+  font-family: "Kirvy Bold";
+}
+
+main .image {
+  grid-column: span 2 / -1;
+}
+
+/* Tablet styles */
+@media screen and (min-width: 590px) {
+  main p {
+    font-size: 2.5rem;
+  }
+}
+
+/* Laptop styles */
+@media screen and (min-width: 900px) {
+  header,
+  main {
+    padding: 4.5rem 4.5rem 0;
+  }
+
+  main {
+    grid-template-columns: [col-start] repeat(12, 1fr) [col-end];
+    max-width: 1296px;
+    margin: 0 auto;
+  }
+
+  main p {
+    font-size: 4rem;
+  }
+}
